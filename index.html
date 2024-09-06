@@ -4,83 +4,243 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Al Taqwah Foundation</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Lobster&display=swap" rel="stylesheet">
+
+    <!-- CSS Styles -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f4f4f9;
+            overflow-x: hidden;
+        }
+
+        /* Page Heading */
+        header {
+            text-align: center;
+            padding: 2rem 0;
+            background-color: #333;
+            color: #fff;
+        }
+
+        header h1 {
+            font-family: 'Lobster', cursive;
+            font-size: 3rem;
+            letter-spacing: 1px;
+            animation: slideIn 2s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Menu bar styles */
+        nav {
+            background-color: #4CAF50;
+            padding: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 10;
+            top: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffeb3b;
+        }
+
+        /* Image and text animation styles */
+    .donation-section {
+        margin-top: 180px; /* Adjust for fixed menu and header */
+        text-align: center;
+    }
+
+    .donation-image-container {
+        position: relative;
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto;
+        overflow: hidden; /* Ensures any excess image gets clipped */
+        border-radius: 10px;
+    }
+
+    .donation-image-container img {
+        width: 100%;
+        height: 400px; /* Fixed height for consistent display */
+        object-fit: contain; /* Ensures the image covers the container proportionally */
+        background-color: #f0f0f0; /* Adds a background color in case the image doesn't fill the container */
+        border-radius: 10px;
+        animation: fadeIn 2s ease-in-out infinite alternate;
+    }
+
+    .donation-quote {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: 'Lobster', cursive;
+        font-size: 1.5rem;
+        color: #fff;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        animation: fadeInText 2s ease-in-out infinite alternate;
+    }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInText {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Aim of the Foundation */
+        .foundation-aim {
+            margin: 2rem auto;
+            max-width: 700px;
+            text-align: center;
+        }
+
+        .foundation-aim h2 {
+            font-family: 'Lobster', cursive;
+            font-size: 2.5rem;
+            color: #333;
+            animation: slideIn 2s ease-out;
+        }
+
+        .foundation-aim p {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.8;
+            animation: fadeIn 3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Hover effects */
+        .donation-image-container img:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+        }
+    </style>
 </head>
 <body>
+
+    <!-- Page Heading -->
     <header>
-        <div class="container">
-            <div class="logo">
-                <h1>Al Taqwah Foundation</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#sadqat">Sadqat</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#bank-statement">Bank Statement</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
-                </ul>
-            </nav>
-        </div>
+        <br><h1>Al Taqwah Foundation</h1>
     </header>
 
-    <section id="home" class="home-section">
-        <div class="hero">
-            <h2>Empowering Through Giving</h2>
-            <p>Your small contribution can make a huge difference.</p>
-            <a href="#donate" class="donate-btn">Donate Now</a>
-        </div>
-    </section>
+    <!-- Menu bar -->
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Account Statements</a></li>
+            <li><a href="#">Where the Money is Donated</a></li>
+            <li><a href="#">Appeal</a></li>
+        </ul>
+    </nav>
 
-    <section id="sadqat" class="sadqat-section">
-        <h2>Sadqat</h2>
-        <p>Sadqat, or charitable giving, is a fundamental part of our work at Al Taqwah Foundation. We believe in providing for the less fortunate and uplifting communities through kindness and generosity.</p>
-        <div class="card-container">
-            <div class="card">
-                <h3>Feed the Needy</h3>
-                <p>Provide meals for those who need it most.</p>
-                <a href="#donate" class="btn">Donate Now</a>
-            </div>
-            <div class="card">
-                <h3>Educational Support</h3>
-                <p>Help children get access to education.</p>
-                <a href="#donate" class="btn">Donate Now</a>
-            </div>
-            <div class="card">
-                <h3>Medical Aid</h3>
-                <p>Provide urgent medical help to those in need.</p>
-                <a href="#donate" class="btn">Donate Now</a>
+    <!-- Donation image with animation -->
+    <div class="donation-section">
+        <div class="donation-image-container">
+            <img id="donationImage" src="https://i.pinimg.com/736x/75/a8/a6/75a8a6baf1eacdb72dabf731bf00bf5e.jpg" alt="Donation Image">
+            <div class="donation-quote" id="donationQuote">
+                "The Prophet said, 'The upper hand is better than the lower hand...'"
             </div>
         </div>
-    </section>
+    </div>
 
-    <section id="about" class="about-section">
-        <h2>About Us</h2>
-        <p>Al Taqwah Foundation is a non-profit organization dedicated to serving the needy through Sadqat, Zakat, and various charitable projects. Our mission is to make the world a better place by spreading love, kindness, and support to those in need.</p>
-    </section>
+    <!-- Aim of the Foundation -->
+    <div class="foundation-aim">
+        <h2>Aim of the Foundation</h2>
+        <p>
+            The aim of Al Taqwah Foundation is to foster lasting change by providing aid to those in need, focusing on sustainable projects that uplift communities. Through education, healthcare, and economic empowerment, we aim to break the cycle of poverty and create a brighter future for all.
+        </p>
+    </div>
 
-    <section id="bank-statement" class="bank-section">
-        <h2>Bank Statement</h2>
-        <p>For transparency, here is our latest bank statement. We ensure every donation is used responsibly and effectively.</p>
-        <a href="bank-statement.pdf" class="btn">View Bank Statement</a>
-    </section>
+    <!-- JavaScript to change the images and quotes -->
+    <script>
+        const images = [
+            {
+                src: 'https://i.pinimg.com/736x/75/a8/a6/75a8a6baf1eacdb72dabf731bf00bf5e.jpg',
+                quote: "The Prophet said, 'The upper hand is better than the lower hand...'"
+            },
+            {
+                src: 'https://media.licdn.com/dms/image/v2/D4D22AQG1pp3i8EvYdw/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1706080867120?e=2147483647&v=beta&t=Kn4uLR5pEcNJ9evNUbcotNiflNWXylDkAIoTCemfT84',
+                quote: "Charity does not decrease wealth."
+            },
+            {
+                src: 'https://i.redd.it/vi00ywb7q6hb1.jpg',
+                quote: "Whoever saves one life, it is as if he has saved all of mankind."
+            }
+        ];
 
-    <section id="contact" class="contact-section">
-        <h2>Contact Us</h2>
-        <p>If you have any questions, feel free to get in touch. We are here to assist you.</p>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit" class="btn">Send Message</button>
-        </form>
-    </section>
+        let currentImageIndex = 0;
+        const imageElement = document.getElementById('donationImage');
+        const quoteElement = document.getElementById('donationQuote');
 
-    <footer>
-        <p>&copy; 2024 Al Taqwah Foundation. All Rights Reserved.</p>
-    </footer>
+        function changeImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            imageElement.src = images[currentImageIndex].src;
+            quoteElement.textContent = images[currentImageIndex].quote;
+        }
 
-    <script src="scripts.js"></script>
+        setInterval(changeImage, 10000); // Change every 10 seconds
+    </script>
+
 </body>
 </html>
