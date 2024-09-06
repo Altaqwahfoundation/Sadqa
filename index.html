@@ -7,6 +7,7 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
 
     <!-- CSS Styles -->
     <style>
@@ -81,41 +82,131 @@
             color: #ffeb3b;
         }
 
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            nav {
+                background-color: #333;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #444;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                z-index: 1000;
+                border-radius: 0 0 10px 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            nav ul li a {
+                font-size: 1.2rem;
+                padding: 10px;
+                border-bottom: 1px solid #555;
+                text-align: center;
+            }
+
+            nav ul li a:last-child {
+                border-bottom: none;
+            }
+        }
+
+        /* Arabic Text Styling */
+        .arabic-verse {
+            text-align: center;
+            font-size: 1.8rem;
+            font-family: 'Amiri', serif;
+            margin-top: 50px;
+            color: #333;
+            line-height: 2.5rem;
+            animation: fadeInArabic 3s ease-in-out;
+        }
+
+        @keyframes fadeInArabic {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .arabic-verse:hover {
+            transform: scale(1.00);
+            color: #4CAF50;
+            animation: hoverEffect 0.5s ease-in-out;
+        }
+
+        @keyframes hoverEffect {
+            from {
+                letter-spacing: 0;
+            }
+            to {
+                letter-spacing: 1.2px;
+            }
+        }
+
         /* Image and text animation styles */
-    .donation-section {
-        margin-top: 180px; /* Adjust for fixed menu and header */
-        text-align: center;
-    }
+        .donation-section {
+            margin-top: 180px;
+            text-align: center;
+        }
 
-    .donation-image-container {
-        position: relative;
-        width: 100%;
-        max-width: 700px;
-        margin: 0 auto;
-        overflow: hidden; /* Ensures any excess image gets clipped */
-        border-radius: 10px;
-    }
+        .donation-image-container {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 10px;
+        }
 
-    .donation-image-container img {
-        width: 100%;
-        height: 400px; /* Fixed height for consistent display */
-        object-fit: contain; /* Ensures the image covers the container proportionally */
-        background-color: #f0f0f0; /* Adds a background color in case the image doesn't fill the container */
-        border-radius: 10px;
-        animation: fadeIn 2s ease-in-out infinite alternate;
-    }
+        .donation-image-container img {
+            width: 100%;
+            height: 400px;
+            object-fit: contain;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            animation: fadeIn 2s ease-in-out infinite alternate;
+        }
 
-    .donation-quote {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-family: 'Lobster', cursive;
-        font-size: 1.5rem;
-        color: #fff;
-        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-        animation: fadeInText 2s ease-in-out infinite alternate;
-    }
+        .donation-quote {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Lobster', cursive;
+            font-size: 1.5rem;
+            color: #fff;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            animation: fadeInText 2s ease-in-out infinite alternate;
+        }
 
         @keyframes fadeIn {
             from {
@@ -135,6 +226,12 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+        }
+
+        /* Hover effects */
+        .donation-image-container img:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
         }
 
         /* Aim of the Foundation */
@@ -157,94 +254,50 @@
             line-height: 1.8;
             animation: fadeIn 3s ease-out;
         }
+          
+.verse-aim {
+    background-color: #e0f7fa; /* Light blue background */
+    border: 3px solid #0288d1; /* Blue border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Space inside the border */
+    margin: 20px auto; /* Center the section horizontally */
+    max-width: 700px; /* Optional: limit the width */
+    text-align: center; /* Center text inside the section */
+}
 
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(-100%);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
 
-        /* Hover effects */
-        .donation-image-container img:hover {
-            transform: scale(1.05);
-            transition: transform 0.3s ease-in-out;
-        }
-         /* Footer */
+
         footer {
             margin-top: 40px;
             text-align: center;
             color: #777;
             font-size: 1rem;
         }
-
-        /* Arabic Text Styling */
-    .arabic-verse {
-        text-align: center;
-        font-size: 1.8rem;
-        font-family: 'Amiri', serif; /* Use 'Amiri' for an Arabic-style font */
-        margin-top: 50px;
-        color: #333;
-        line-height: 2.5rem;
-        animation: fadeInArabic 3s ease-in-out;
-    }
-
-    /* Animation for the Arabic Text */
-    @keyframes fadeInArabic {
-        from {
-            opacity: 0;
-            transform: translateY(-20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-/* Hover Animation */
-    .arabic-verse:hover {
-        transform: scale(1.00); /* Slightly scale up the text */
-        color: #4CAF50; /* Change text color on hover */
-        animation: hoverEffect 0.5s ease-in-out;
-    }
-
-    /* Keyframe for hover effect */
-    @keyframes hoverEffect {
-        from {
-            letter-spacing: 0;
-        }
-        to {
-            letter-spacing: 1.2px;
-        }
-    }
-    /* Add the Google font for Arabic text */
-    @import url('https://fonts.googleapis.com/css2?family=Amiri&display=swap');
     </style>
 </head>
 <body>
 
     <!-- Page Heading -->
     <header>
-        <br><h1>Al Taqwah Foundation</h1>
+        <br><br><h1>Al Taqwah Foundation</h1>
     </header>
 
     <!-- Menu bar -->
     <nav>
-        <ul>
+        <button class="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
+        <ul class="menu">
             <li><a href="#">Home</a></li>
             <li><a href="#">Contact Us</a></li>
-            <li><a href="statements.html">Account Statements</a></li> <!-- Updated to link to statements.html -->
+            <li><a href="statements.html">Account Statements</a></li>
             <li><a href="#">Where the Money is Donated</a></li>
             <li><a href="#">Appeal</a></li>
         </ul>
     </nav>
-<div class="arabic-verse">
-    <p>يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ لَا تُبْطِلُوا۟ صَدَقَـٰتِكُم بِٱلْمَنِّ وَٱلْأَذَىٰ كَٱلَّذِى يُنفِقُ مَالَهُۥ رِئَآءَ ٱلنَّاسِ وَلَا يُؤْمِنُ بِٱللَّهِ وَٱلْيَوْمِ ٱلْـَٔاخِرِ ۖ فَمَثَلُهُۥ كَمَثَلِ صَفْوَانٍ عَلَيْهِ تُرَابٌۭ فَأَصَابَهُۥ وَابِلٌۭ فَتَرَكَهُۥ صَلْدًۭا ۖ لَّا يَقْدِرُونَ عَلَىٰ شَىْءٍۢ مِّمَّا           
-كَسَبُوا۟ ۗ وَٱللَّهُ لَا يَهْدِى ٱلْقَوْمَ ٱلْكَـٰفِرِينَ ٢٦٤</p>
-</div>
+
+    <div class="arabic-verse">
+        <p>يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ لَا تُبْطِلُوا۟ صَدَقَـٰتِكُم بِٱلْمَنِّ وَٱلْأَذَىٰ كَٱلَّذِى يُنفِقُ مَالَهُۥ رِئَآءَ ٱلنَّاسِ وَلَا يُؤْمِنُ بِٱللَّهِ وَٱلْيَوْمِ ٱلْـَٔاخِرِ ۖ فَمَثَلُهُۥ كَمَثَلِ صَفْوَانٍ عَلَيْهِ تُرَابٌۭ فَأَصَابَهُۥ وَابِلٌۭ فَتَرَكَهُۥ صَلْدًۭا ۖ لَّا يَقْدِرُونَ عَلَىٰ شَىْءٍۢ مِّمَّا كَسَبُوا۟ ۗ وَٱللَّهُ لَا يَهْدِى ٱلْقَوْمَ ٱلْكَـٰفِرِينَ ٢٦٤</p>
+    </div>
+
     <!-- Donation image with animation -->
     <div class="donation-section">
         <div class="donation-image-container">
@@ -264,21 +317,20 @@
     </div>
 
     <div class="arabic-verse">
+        <p>2:265
+        وَمَثَلُ ٱلَّذِينَ يُنفِقُونَ أَمْوَٰلَهُمُ ٱبْتِغَآءَ مَرْضَاتِ ٱللَّهِ وَتَثْبِيتًۭا مِّنْ أَنفُسِهِمْ كَمَثَلِ جَنَّةٍۭ بِرَبْوَةٍ أَصَابَهَا وَابِلٌۭ فَـَٔاتْ أُكُلَهَا ضِعْفَيْنِ فَإِن لَّمْ يُصِبْهَا وَابِلٌۭ فَطَلٌّۭ ۗ وَٱللَّهُ بِمَا تَعْمَلُونَ بَصِيرٌ ٢٦٥</p>
+    </div>
+<div class="verse-aim">
     <p>
-2:265
-وَمَثَلُ ٱلَّذِينَ يُنفِقُونَ أَمْوَٰلَهُمُ ٱبْتِغَآءَ مَرْضَاتِ ٱللَّهِ وَتَثْبِيتًۭا مِّنْ أَنفُسِهِمْ كَمَثَلِ جَنَّةٍۭ بِرَبْوَةٍ أَصَابَهَا وَابِلٌۭ فَـَٔاتَتْ أُكُلَهَا ضِعْفَيْنِ فَإِن لَّمْ يُصِبْهَا وَابِلٌۭ فَطَلٌّۭ ۗ وَٱللَّهُ بِمَا تَعْمَلُونَ بَصِيرٌ ٢٦٥
-</p>
+        And the example of those who donate their wealth, seeking Allah’s pleasure and believing the reward is certain,[1] is that of a garden on a fertile hill: when heavy rain falls, it yields up twice its normal produce. If no heavy rain falls, a drizzle is sufficient. And Allah is All-Seeing of what you do.
+        — Dr. Mustafa Khattab, The Clear Quran
+        [1] It could also mean “… seeking Allah’s pleasure and proving their sincerity.”
+    </p>
 </div>
+    <footer>
+        <p>About: All rights are reserved &copy; 2024</p>
+    </footer>
 
-<p>
-    And the example of those who donate their wealth, seeking Allah’s pleasure and believing the reward is certain,[1] is that of a garden on a fertile hill: when heavy rain falls, it yields up twice its normal produce. If no heavy rain falls, a drizzle is sufficient. And Allah is All-Seeing of what you do.
-— Dr. Mustafa Khattab, The Clear Quran
-
-[1] It could also mean “… seeking Allah’s pleasure and proving their sincerity.”
-</p>
-<footer>
-    <p>About: All rights are reserved &copy; 2024</p>
-</footer>
     <!-- JavaScript to change the images and quotes -->
     <script>
         const images = [
@@ -307,6 +359,11 @@
         }
 
         setInterval(changeImage, 10000); // Change every 10 seconds
+
+        // JavaScript for Menu Toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.menu').classList.toggle('show');
+        });
     </script>
 
 </body>
