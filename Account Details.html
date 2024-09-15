@@ -1,99 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Donation Account Information</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background-color: #000;
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Account Information</title>
+    <style>
+        body {
+            background-color: #000;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
 
-    .donation-info {
-      background-color: #111;
-      border: 2px solid #fff;
-      padding: 20px;
-      border-radius: 10px;
-      width: 400px;
-      text-align: center;
-      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
-      transition: transform 0.3s ease-in-out;
-    }
+        .container {
+            background-color: #111;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
 
-    .donation-info:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
-    }
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
 
-    .donation-info h1 {
-      font-size: 24px;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #00ffcc;
-    }
+        h2::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 2px;
+            background-color: #fff;
+            margin: 10px auto;
+            transition: width 0.4s;
+        }
 
-    .donation-info p {
-      font-size: 18px;
-      margin: 10px 0;
-    }
+        h2:hover::after {
+            width: 200px;
+        }
 
-    .copy-btn {
-      background-color: transparent;
-      border: 2px solid #00ffcc;
-      color: #00ffcc;
-      padding: 8px 15px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s, color 0.3s;
-    }
+        .account-info {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #555;
+            border-radius: 5px;
+            position: relative;
+            transition: border-color 0.3s;
+        }
 
-    .copy-btn:hover {
-      background-color: #00ffcc;
-      color: #000;
-    }
+        .account-info:hover {
+            border-color: #f39c12;
+        }
 
-    .outline {
-      text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
-    }
-  </style>
+        .account-info span {
+            display: block;
+            font-size: 1.1rem;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            background-color: #333;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .copy-btn:hover {
+            background-color: #f39c12;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 600px) {
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .account-info span {
+                font-size: 1rem;
+            }
+
+            .copy-btn {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="donation-info">
-    <h1 class="outline">Account Details</h1>
-    
-    <p>Account No: <span id="account-no">6947354572</span>
-      <button class="copy-btn" onclick="copyToClipboard('account-no')">Copy</button>
-    </p>
 
-    <p>IFSC Code: <span id="ifsc-code">KKBK0000724</span>
-      <button class="copy-btn" onclick="copyToClipboard('ifsc-code')">Copy</button>
-    </p>
+    <div class="container">
+        <h2>Account Details</h2>
 
-    <p>Account Holder Name: <span id="account-holder">Jubeda Abdul Majid Khan</span>
-      <button class="copy-btn" onclick="copyToClipboard('account-holder')">Copy</button>
-    </p>
-     <p>Upi Handle: <span id="upi-handle">altaqwahfoundtn.9404328580@kotak</span>
-      <button class="copy-btn" onclick="copyToClipboard('upi-handle')">Copy</button>
-    </p>
-  </div>
+        <div class="account-info">
+            <span>Account No: 697354572</span>
+            <button class="copy-btn" onclick="copyToClipboard('6947354572')">Copy</button>
+        </div>
 
-  <script>
-    function copyToClipboard(elementId) {
-      var copyText = document.getElementById(elementId).textContent;
-      navigator.clipboard.writeText(copyText).then(function() {
-        alert('Copied: ' + copyText);
-      });
-    }
-  </script>
+        <div class="account-info">
+            <span>IFSC Code: KKBK0000724</span>
+            <button class="copy-btn" onclick="copyToClipboard('KKBK0000724')">Copy</button>
+        </div>
+
+        <div class="account-info">
+            <span>Account Holder Name: Jubeda Abdul Majid Khan</span>
+            <button class="copy-btn" onclick="copyToClipboard('Jubeda Abdul Majid Khan')">Copy</button>
+        </div>
+        
+    </div>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert(text + " copied to clipboard!");
+            });
+        }
+    </script>
+
 </body>
 </html>
-
